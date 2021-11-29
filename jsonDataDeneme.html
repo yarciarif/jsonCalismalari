@@ -1,0 +1,23 @@
+<html>
+<body>
+<div id="demo"></div>
+
+
+
+
+
+
+
+<script>
+var jsonStringData='{"ad":"arif","soyad":"Yarcı","no":"132"}';
+console.log(jsonStringData);
+var jsonObjectData=JSON.parse(jsonStringData);
+console.log(jsonObjectData);
+console.log(jsonObjectData.ad);
+document.getElementById("demo").innerHTML+=jsonObjectData.no;
+
+
+</script>
+
+</body>
+</html>

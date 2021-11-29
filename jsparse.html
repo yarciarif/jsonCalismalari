@@ -1,0 +1,27 @@
+<html>
+<body>
+<div id="demo"></div>
+
+<p id="demo"></p>
+<script src="jquery-3.2.1.js"></script>
+<script>
+/*function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "https://wind-bow.glitch.me/twitch-api/streams/Canko", true);
+  xhttp.send();
+*/  	
+	var url="https://wind-bow.glitch.me/twitch-api/streams/Canko";
+	var apikey="6ab39c959a674fd9ec58538af27b30aa1ab046ba415d85c0f42393ca1c9e3fcf"
+  $.getJSON(url,function(data){
+  logo=data.stream.channel.video_banner;
+  console.log(logo);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+<style>
+h1 {
+color:red;
+}
+</style>
+</head>
+<body>
+<h1>İç içe geçmiş diziler</h1>
+<p id="demo"></p>
+<script>
+var myObj,i,x=""	;
+var myObj={	"name":"John",
+			"age":40,
+			"cars":[
+					{"name":"Ford","model":["Fiesta","Focus","Mustang"]},
+				    {"name":"Bmw","model":["320","x3","x5"]},
+				    {"name":"Fiat","model":["500","Panda"]}
+					]
+		}
+	for(i in myObj.cars){
+	x+="<h2>"+ myObj.cars[i].name +"</h2>";
+		for(j in myObj.cars[i].model){
+	x+=myObj.cars[i].model[j]+"<br>";
+		}
+		}
+		document.getElementById("demo").innerHTML=x;
+</script>
+</body>
+</html>

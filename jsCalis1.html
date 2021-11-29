@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+
+var myJSON={
+"haber1":{
+		"no":"1",
+		"baslik":"çalışacaklar mış...",
+		"icerik":"amanda çalışırlar mıııııışşşşşş",
+		"yorum":"inşallah",
+		"hit":"3"
+	},
+	"haber2":{
+		"no":"21",
+		"baslik":"2çalışacaklar mış...",
+		"icerik":"2amanda çalışırlar mıııııışşşşşş",
+		"yorum":"2inşallah",
+		"hit":"23"
+	},
+	"haber3":{
+		"no":"31",
+		"baslik":"3çalışacaklar mış...",
+		"icerik":"3amanda çalışırlar mıııııışşşşşş",
+		"yorum":"3inşallah",
+		"hit":"33"
+	}
+}
+var div1="<div id='idDiv1'>icerik</div>";
+var q1="";for(a1 in myJSON){q1+="<hr>"+a1+":"+(typeof myJSON[a1]=="function"?myJSON[a1]+"": JSON.stringify(myJSON[a1]))+"<br>";};
+document.body.innerHTML=div1;
+document.getElementById("idDiv1").innerHTML=myJSON.haber1.icerik;
+document.getElementById("idDiv1").innerHTML+=myJSON.haber3.yorum;
+</script>
+</body>
+</html>

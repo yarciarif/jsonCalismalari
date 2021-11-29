@@ -1,0 +1,25 @@
+<html>
+<body>
+<p>Delete Fonksiyonu</p>
+<p id="demo"></p>
+<script>
+var myObj, i, x="";
+var myObj = {
+  "name":"John",
+  "age":30,
+  "cars": {
+    "car1":"Ford",
+    "car2":"BMW",
+    "car3":"Fiat"
+  }
+}
+delete myObj.cars.car3;
+for(i in myObj.cars){
+x+=myObj.cars[i]+"<br>";
+}
+document.getElementById("demo").innerHTML=x;
+
+</script>
+</body>
+</html>
+

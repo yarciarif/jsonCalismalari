@@ -1,0 +1,21 @@
+	"haber1":{
+		"no":"1",
+		"baslik":"çalışacaklar mış...",
+		"icerik":"amanda çalışırlar mıııııışşşşşş",
+		"yorum":"inşallah",
+		"hit":"3"
+	},
+	"haber2":{
+		"no":"21",
+		"baslik":"2çalışacaklar mış...",
+		"icerik":"2amanda çalışırlar mıııııışşşşşş",
+		"yorum":"2inşallah",
+		"hit":"23"
+	},
+	"haber3":{
+		"no":"31",
+		"baslik":"3çalışacaklar mış...",
+		"icerik":"3amanda çalışırlar mıııııışşşşşş",
+		"yorum":"3inşallah",
+		"hit":"33"
+	}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TıkYapı</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		#header{ background-color: #cdf; min-height: 100px; padding: 1em; }
+		#content{ background-color: #cfd; min-height: 300px; padding: 1em; }
+		#footer{ background-color: #fcd; min-height: 100px; padding: 1em; }
+	</style>
+</head>
+<body>
+
+<div id="header"></div>
+<div id="content"></div>
+<div id="footer"></div>
+
+<button onclick="varsayilanlariYukle()">Varsayılanları Yükle</button>
+
+
+<script type="text/javascript">
+	var nesne = {
+		'banner':'<div><h1>{{siteAdi}}</h1></div>',
+		'banner_a':'logo sol',
+
+		'menu':'<div>\
+			<a href="{{href1}}">{{icerik1}}</a>\
+			<a href="{{href2}}">{{icerik2}}</a>\
+			<a href="{{href3}}">{{icerik3}}</a>\
+		</div>',
+		
+		'content':'<div><p>\
+			<h3>...</h3>\
+			<div>...</div>\
+			</p></div>',
+
+		'kurucu':'<center>tikyapi.net tüm hakları saklıdır',
+
+		'resimKutusu':'\
+			<div style="border:1px solid white;padding:0.4em;">\
+				<div style="display:inline-block;width:25%;box-sizing:border-box;vertical-align:top;">\
+					<img src="{{src}}" width="100%" />\
+				</div>\
+				<div style="display:inline-block;width:25%;box-sizing:border-box;vertical-align:top;padding:0.4em;">\
+					<i style="display:inline-block;vertical-align:top"><b>{{aciklama}}</b></i>\
+				</div>\
+			</div>',
+
+
+
+
+
+
+
+	};
+
+
+	function yerlestir(id,nKey,data) {
+		if(nKey){
+
+				nesneHtml=nesne[nKey];
+				if( nKey && data ){
+					for(var key in data){
+						nesneHtml=nesneHtml.split("{{"+key+"}}").join(data[key]);
+					}
+				}
+
+				document.getElementById(id).innerHTML+=nesneHtml;
+				console.log(nKey+" nesnesi #"+id+" taşıyıcısına yerleştirildi");
+
+		}
+		else console.log("Nesne belirtilmemiş.");
+
+	}
+
+
+
+
+
+////////// TEST İÇERİKLERİ /////////// 
+
+	function varsayilanlariYukle(){
+
+		
+
+		// Direk yerleştir
+		yerlestir('header','banner',{siteAdi:"Deneme sitem"});
+		yerlestir('content','content');
+		yerlestir('footer','kurucu');
+
+		// Data ile yerleştir
+		yerlestir('header','menu',
+			{
+				href1:"anasayfa.html",
+				icerik1:"Anasayfa",
+				href2:"hakkimizda.html",
+				icerik2:"Hakkımızda",
+				href3:"iletisim.html",
+				icerik3:"İletişim",
+			}
+		);
+		yerlestir('content','resimKutusu',
+			{
+				src:"http://www.zertel.net/dosya/upload/araziyikoru.png",
+				aciklama:"Açıklama metni sdasdsa d asd dasdasdasdsa dasdas dasdad sadasdsd sdsd sd sd sd s dssfasgfsdfsa fdsfsdf"
+			}
+		);
+
+		
+		
+		// Çoklu data ile yerleştir
+		// ...
+
+
+		// Örnek
+		for(var key in nesne)console.log(key);
+		console.log("yerlestir('header','banner');");
+
+	}
+
+	window.onload=varsayilanlariYukle;
+
+///////////////////////////////////////
+
+
+</script>
+</body>
+</html>
